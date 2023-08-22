@@ -46,7 +46,7 @@
 
     .hover-effect {
       position: absolute;
-      top: 0;
+      top: 140px;
       left: 0;
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
@@ -80,10 +80,25 @@
 
     .project {
       margin-bottom: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
     }
 
     .project img {
-      max-width: 100%;
+      max-width: 40%;
+      border-radius: 5px;
+    }
+
+    .project-details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .project-text {
+      flex-grow: 1;
     }
 
     /* Styles for the image gallery */
@@ -111,6 +126,14 @@
 
       #gallery {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .project img {
+        max-width: 100%; /* Reset image width */
+      }
+
+      .project {
+        flex-direction: row;
       }
     }
 
@@ -147,6 +170,24 @@
       border-bottom: 1px solid #ddd;
       margin: 20px 0;
     }
+
+    /* New styles for the "Contact Me" section */
+    #contact {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #f7f7f7;
+    }
+
+    #contact-heading {
+      font-size: 24px;
+      color: steelblue;
+      margin-bottom: 20px;
+    }
+
+    #contact-details {
+      font-size: 18px;
+      color: #333;
+    }
   </style>
 </head>
 <body>
@@ -154,7 +195,8 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
-      <li><a href="#gallery">Contact</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -176,12 +218,14 @@
     <h2 id="work-heading">Here's what I have done</h2>
     <!-- Project List will go here -->
     <div class="project">
-      <img src="project1.jpg" alt="Project 1">
-      <h3>Project 1</h3>
-      <h4>Delivery Robot</h4>
-      <p>Description of Project 1.</p>
-      <p>The delivery robot is a technologically advanced device designed for autonomous item transportation. It features a weight sensor integrated into its cargo area, displaying real-time weight information on an LED screen. Equipped with an ESP32 module, it efficiently processes data from the weight sensor and an ultrasonic sensor, mounted on the front, for obstacle detection and avoidance. The ESP32 controls the robot's movements and communication with a central system or app, allowing remote monitoring and control. The robot's rechargeable battery ensures extended operation periods. This cutting-edge technology streamlines the delivery process, ensures safe item transportation, and offers valuable weight data for logistics and inventory management. Overall, the delivery robot provides a seamless, efficient, and intelligent solution for delivery tasks.</p>
-      <!-- Add more projects as needed -->
+      <div class="project-details">
+        <img src="project1.jpg" alt="Project 1">
+        <div class="project-text">
+          <h3>Delivery Robot</h3>
+          <p>The delivery robot is a technologically advanced device...</p>
+        </div>
+      </div>
+      <p></p>
     </div>
   </section>
 
@@ -192,6 +236,14 @@
     <img src="image2.jpg" alt="Image 2">
     <img src="image3.jpg" alt="Image 3">
     <!-- Add more images as needed -->
+  </section>
+  
+  <section id="contact">
+    <h2 id="contact-heading">Contact Me</h2>
+    <div id="contact-details">
+      <p>Phone: +91 23-456-7890</p>
+      <p>Email: deepak4881@example.com</p>
+    </div>
   </section>
 </body>
 </html>
